@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <style>
+        .question img {
+            width: 510px;
+        }
+
+        .question {
+            display: none;
+            margin: 0 auto;
+            width: max-content;
+        }
+
+        .active {
+            display: block;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="question active">
+    <img src="https://im0-tub-ru.yandex.net/i?id=18a7efbd43f9b9d38df5cf83fb7860ad&n=13&exp=1" alt="">
+    <h3>как называется такой мост?</h3>
+    <form>
+        <label>
+            <input type="radio"> Золотые ворота
+        </label>
+        <label>
+            <input type="radio"> Золотая Арка
+        </label>
+        <label>
+            <input type="radio"> что-то золотое
+        </label>
+        <input type="submit">
+    </form>
+</div>
+<div class="question">
+    <img src="https://w-dog.ru/wallpapers/0/11/314926505043400/1967-ac-cars-shelbi-kobra-s-c-mkiii-ford.jpg" alt="">
+    <h3>Что за машина</h3>
+    <form>
+        <label>
+            <input type="radio"> Кобра шелби
+        </label>
+        <label>
+            <input type="radio"> бугатти веерон
+        </label>
+        <label>
+            <input type="radio"> Лада гранта
+        </label>
+        <input type="submit">
+    </form>
+</div>
+<div class="question">
+    <img src="https://dreamaqua.ru/wp-content/uploads/2016/12/petushok6.jpg" alt="">
+    <h3>Петух?</h3>
+    <form>
+        <label>
+            <input type="radio"> да
+        </label>
+        <label>
+            <input type="radio"> нет
+        </label>
+        <label>
+            <input type="radio"> сам такой
+        </label>
+        <input type="submit">
+    </form>
+</div>
+</body>
+<script>
+    let question = document.querySelectorAll(".question");
+    let active = false
+    setInterval(() => {
+        console.log("tick");
+        question.forEach((el) => {
+            console.log(el.classList["active"]);
+            if (el.classList[1]) {
+                el.classList.toggle("active");
+                active = true;
+            } else if (active) {
+                el.classList.toggle("active");
+                active = false
+            }
+        })
+    }, 5000)
+</script>
+</html>
